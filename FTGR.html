@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITZZONE GEAR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #c00; /* Color rojo */
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            color: white;
+            margin: 0;
+            font-size: 2em;
+        }
+        .logo {
+            width: 130px; /* Tamaño del logo */
+        }
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: #eee;
+        }
+        .search-bar input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            margin-left: 5px;
+            background-color: #c00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .categories {
+            display: flex;
+            justify-content: center;
+            background-color: #ddd;
+            padding: 10px;
+        }
+        .categories a {
+            margin: 0 15px;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+        .nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .products {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .product {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            width: 30%;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        .info {
+            background-color: #eee;
+            padding: 20px;
+            text-align: center;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .popup-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            width: 300px;
+            text-align: center;
+        }
+        .close {
+            cursor: pointer;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>FITZZONE GEAR</h1>
+    <img src="https://scontent-qro1-2.xx.fbcdn.net/v/t39.30808-6/464418818_122094296378595920_4010397919129121606_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeG06EBESt7g8I8iu64_bL47kTudaKmCQZCRO51oqYJBkHgyFkLb3XtHyBF9_xIoSMEBXeZKtQDsQ_czAbK5nL0o&_nc_ohc=g9RY-ja10-AQ7kNvgFFIQ7l&_nc_zt=23&_nc_ht=scontent-qro1-2.xx&_nc_gid=AykDZAkqnhVqac5Fu-XdFrI&oh=00_AYCJJALmflm1qgmRMtvZV_Im0CQJyR-b4f_FaN-hWN4k5A&oe=67551838" alt="Logo" class="logo">
+    <nav class="nav">
+        <a href="#inicio" onclick="togglePopup()">Iniciar Sesión / Registro</a>
+    </nav>
+</header>
+
+<div class="search-bar">
+    <input type="text" placeholder="Buscar productos...">
+    <button>Buscar</button>
+</div>
+
+<div class="categories">
+    <a href="#hombre">Hombre</a>
+    <a href="#mujer">Mujer</a>
+    <a href="#running">Running</a>
+    <a href="#futbol">Fútbol</a>
+    <a href="#gym">GYM</a>
+    <a href="#basquetball">Basketball</a>
+    <a href="#outdoor">Outdoor</a>
+</div>
+
+<div class="products">
+    <div class="product">
+        <img src="https://img.freepik.com/vector-premium/conjunto-vector-coleccion-ropa-deportiva_18591-20007.jpg" alt="Producto 1">
+        <h2>Ropa Deportiva</h2>
+        <p>Todo tipo de ropa para gimnasio, running que podras encontran aqui.</p>
+    </div>
+    <div class="product">
+        <img src="https://www.diffusionsport.com/wp-content/uploads/2024/05/accesorios_complementos_deportivos1138735475.jpg" alt="Producto 2">
+        <h2>Accesorios Deportivos</h2>
+        <p> Tus accesorios para el deporte podras encontrarlos aqui.</p>
+    </div>
+    <div class="product">
+        <img src="https://media.istockphoto.com/id/1291035009/es/vector/zapatos-de-zapatillas-calzado-de-fitness-para-deporte-running-y-entrenamiento-coloridos.jpg?s=612x612&w=0&k=20&c=naL2d11HfkLSPLsZ4GT7VCp0ZAkIhXTN7yWlqMeeddU=" alt="Producto 3">
+        <h2>Calzado Deportivo</h2>
+        <p> Puedes seleccionar ropa o calzado especializado</p>
+    </div>
+</div>
+
+<div class="info">
+    <h2>Conéctate con nosotros</h2>
+    <p>Síguenos en nuestras redes sociales:</p>
+    <p>
+      <a href="https://www.facebook.com/profile.php?id=61567877603169&mibextid=ZbWKwL" target="_blank">Facebook</a> | 
+      <a href="https://www.instagram.com/fitzzonegear?igsh=NXdub2t1OHpmYmVk" target="_blank">Instagram</a> |  
+        <a href="https://www.twitter.com" target="_blank">Twitter</a>
+    </p>
+</div>
+
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <span class="close" onclick="togglePopup()">&times;</span>
+        <h2>Iniciar Sesión</h2>
+        <form>
+            <input type="text" placeholder="Usuario" required><br><br>
+            <input type="password" placeholder="Contraseña" required><br><br>
+            <button type="submit">Entrar</button>
+        </form>
+        <h3>¿No tienes una cuenta? <a href="#">Regístrate aquí</a></h3>
+    </div>
+</div>
+
+<script>
+    function togglePopup() {
+        var popup = document.getElementById('popup');
+        popup.style.display = popup.style.display === 'flex' ? 'none' : 'flex';
+    }
+</script>
+
+</body>
+</html>
